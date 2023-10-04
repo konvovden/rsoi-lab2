@@ -1,3 +1,4 @@
+using GatewayService.Clients.CarsServiceApiClient.Extensions;
 using Microsoft.OpenApi.Models;
 
 namespace GatewayService.Server;
@@ -21,6 +22,8 @@ public class Startup
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "GatewayService.Server", Version = "v1" });
         });
         services.AddSwaggerGenNewtonsoftSupport();
+
+        services.AddCarsServiceApiClient(Configuration);
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
