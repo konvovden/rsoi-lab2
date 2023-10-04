@@ -1,3 +1,5 @@
+using CarsService.Server.Services;
+
 namespace CarsService.Server;
 
 public class Startup
@@ -32,6 +34,7 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
+            endpoints.MapGrpcService<CarsApiService>();
         });
     }
 }
