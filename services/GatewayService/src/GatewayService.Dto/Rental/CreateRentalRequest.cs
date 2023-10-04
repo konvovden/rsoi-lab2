@@ -9,21 +9,21 @@ public class CreateRentalRequest
     /// UUID автомобиля
     /// </summary>
     /// <value>UUID автомобиля</value>
-    [DataMember(Name="carUid", EmitDefaultValue=false)]
+    [DataMember(Name="carUid")]
     public Guid CarUid { get; set; }
 
     /// <summary>
     /// Дата начала аренды
     /// </summary>
     /// <value>Дата начала аренды</value>
-    [DataMember(Name="dateFrom", EmitDefaultValue=false)]
+    [DataMember(Name="dateFrom")]
     public string DateFrom { get; set; }
 
     /// <summary>
     /// Дата окончания аренды
     /// </summary>
     /// <value>Дата окончания аренды</value>
-    [DataMember(Name="dateTo", EmitDefaultValue=false)]
+    [DataMember(Name="dateTo")]
     public string DateTo { get; set; }
 
     public CreateRentalRequest(Guid carUid,

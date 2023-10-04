@@ -1,5 +1,6 @@
 ﻿using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace GatewayService.Dto.Cars.Enums;
 
@@ -7,7 +8,7 @@ namespace GatewayService.Dto.Cars.Enums;
 /// Тип автомобиля
 /// </summary>
 /// <value>Тип автомобиля</value>
-[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CarType
 {
     [EnumMember(Value = "SEDAN")]

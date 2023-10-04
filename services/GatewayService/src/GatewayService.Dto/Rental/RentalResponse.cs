@@ -12,40 +12,40 @@ public class RentalResponse
     /// UUID аренды
     /// </summary>
     /// <value>UUID аренды</value>
-    [DataMember(Name="rentalUid", EmitDefaultValue=false)]
+    [DataMember(Name="rentalUid")]
     public Guid RentalUid { get; set; }
 
     /// <summary>
     /// Статус аренды
     /// </summary>
     /// <value>Статус аренды</value>
-    [DataMember(Name="status", EmitDefaultValue=false)]
+    [DataMember(Name="status")]
     public RentalStatus Status { get; set; }
 
     /// <summary>
     /// Дата начала аренды
     /// </summary>
     /// <value>Дата начала аренды</value>
-    [DataMember(Name="dateFrom", EmitDefaultValue=false)]
+    [DataMember(Name="dateFrom")]
     public string DateFrom { get; set; }
 
     /// <summary>
     /// Дата окончания аренды
     /// </summary>
     /// <value>Дата окончания аренды</value>
-    [DataMember(Name="dateTo", EmitDefaultValue=false)]
+    [DataMember(Name="dateTo")]
     public string DateTo { get; set; }
 
     /// <summary>
     /// Gets or Sets Car
     /// </summary>
-    [DataMember(Name="car", EmitDefaultValue=false)]
+    [DataMember(Name="car")]
     public Car Car { get; set; }
 
     /// <summary>
     /// Gets or Sets Payment
     /// </summary>
-    [DataMember(Name="payment", EmitDefaultValue=false)]
+    [DataMember(Name="payment")]
     public PaymentInfo Payment { get; set; }
 
     public RentalResponse(Guid rentalUid, 

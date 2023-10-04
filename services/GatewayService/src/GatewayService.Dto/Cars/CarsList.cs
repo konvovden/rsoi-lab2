@@ -9,27 +9,27 @@ public class CarsList
     /// Номер страницы
     /// </summary>
     /// <value>Номер страницы</value>
-    [DataMember(Name="page", EmitDefaultValue=false)]
+    [DataMember(Name="page")]
     public int Page { get; set; }
 
     /// <summary>
     /// Количество элементов на странице
     /// </summary>
     /// <value>Количество элементов на странице</value>
-    [DataMember(Name="pageSize", EmitDefaultValue=false)]
+    [DataMember(Name="pageSize")]
     public int PageSize { get; set; }
 
     /// <summary>
     /// Общее количество элементов
     /// </summary>
     /// <value>Общее количество элементов</value>
-    [DataMember(Name="totalElements", EmitDefaultValue=false)]
+    [DataMember(Name="totalElements")]
     public int TotalElements { get; set; }
 
     /// <summary>
     /// Gets or Sets Items
     /// </summary>
-    [DataMember(Name="items", EmitDefaultValue=false)]
+    [DataMember(Name="items")]
     public List<Car> Items { get; set; }
 
     public CarsList(int page,

@@ -10,56 +10,56 @@ public class Car
     /// UUID автомобиля
     /// </summary>
     /// <value>UUID автомобиля</value>
-    [DataMember(Name="carUid", EmitDefaultValue=false)]
+    [DataMember(Name="carUid")]
     public Guid Id { get; set; }
 
     /// <summary>
     /// Марка автомобиля
     /// </summary>
     /// <value>Марка автомобиля</value>
-    [DataMember(Name="brand", EmitDefaultValue=false)]
+    [DataMember(Name="brand")]
     public string Brand { get; set; }
 
     /// <summary>
     /// Модель автомобиля
     /// </summary>
     /// <value>Модель автомобиля</value>
-    [DataMember(Name="model", EmitDefaultValue=false)]
+    [DataMember(Name="model")]
     public string Model { get; set; }
 
     /// <summary>
     /// Регистрационный номер автомобиля
     /// </summary>
     /// <value>Регистрационный номер автомобиля</value>
-    [DataMember(Name="registrationNumber", EmitDefaultValue=false)]
+    [DataMember(Name="registrationNumber")]
     public string RegistrationNumber { get; set; }
 
     /// <summary>
     /// Мощность автомобиля в лошадиных силах
     /// </summary>
     /// <value>Мощность автомобиля в лошадиных силах</value>
-    [DataMember(Name="power", EmitDefaultValue=false)]
+    [DataMember(Name="power")]
     public int Power { get; set; }
     
     /// <summary>
     /// Тип автомобиля
     /// </summary>
     /// <value>Тип автомобиля</value>
-    [DataMember(Name="type", EmitDefaultValue=false)]
+    [DataMember(Name="type")]
     public CarType Type { get; set; }
 
     /// <summary>
     /// Цена автомобиля за сутки
     /// </summary>
     /// <value>Цена автомобиля за сутки</value>
-    [DataMember(Name="price", EmitDefaultValue=false)]
+    [DataMember(Name="price")]
     public int Price { get; set; }
 
     /// <summary>
     /// Флаг, указывающий что автомобиль доступен для бронирования
     /// </summary>
     /// <value>Флаг, указывающий что автомобиль доступен для бронирования</value>
-    [DataMember(Name="available", EmitDefaultValue=false)]
+    [DataMember(Name="available")]
     public bool Available { get; set; }
 
     public Car(Guid id,

@@ -10,7 +10,7 @@ public static class CarConverter
     {
         return new ApiCar()
         {
-            Id = coreCar.ToString(),
+            Id = coreCar.Id.ToString(),
             Brand = coreCar.Brand,
             Model = coreCar.Model,
             RegistrationNumber = coreCar.RegistrationNumber,
