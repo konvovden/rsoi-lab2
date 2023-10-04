@@ -1,42 +1,41 @@
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace GatewayService.Dto.Cars;
 
 [DataContract]
-public class PaginationResponse
+public class CarsList
 {
     /// <summary>
     /// Номер страницы
     /// </summary>
     /// <value>Номер страницы</value>
     [DataMember(Name="page", EmitDefaultValue=false)]
-    public decimal Page { get; set; }
+    public int Page { get; set; }
 
     /// <summary>
     /// Количество элементов на странице
     /// </summary>
     /// <value>Количество элементов на странице</value>
     [DataMember(Name="pageSize", EmitDefaultValue=false)]
-    public decimal PageSize { get; set; }
+    public int PageSize { get; set; }
 
     /// <summary>
     /// Общее количество элементов
     /// </summary>
     /// <value>Общее количество элементов</value>
     [DataMember(Name="totalElements", EmitDefaultValue=false)]
-    public decimal TotalElements { get; set; }
+    public int TotalElements { get; set; }
 
     /// <summary>
     /// Gets or Sets Items
     /// </summary>
     [DataMember(Name="items", EmitDefaultValue=false)]
-    public List<CarResponse> Items { get; set; }
+    public List<Car> Items { get; set; }
 
-    public PaginationResponse(decimal page,
-        decimal pageSize,
-        decimal totalElements,
-        List<CarResponse> items)
+    public CarsList(int page,
+        int pageSize,
+        int totalElements,
+        List<Car> items)
     {
         Page = page;
         PageSize = pageSize;

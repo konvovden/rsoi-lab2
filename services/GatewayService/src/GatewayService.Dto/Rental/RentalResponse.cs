@@ -40,7 +40,7 @@ public class RentalResponse
     /// Gets or Sets Car
     /// </summary>
     [DataMember(Name="car", EmitDefaultValue=false)]
-    public CarInfo Car { get; set; }
+    public Car Car { get; set; }
 
     /// <summary>
     /// Gets or Sets Payment
@@ -52,7 +52,7 @@ public class RentalResponse
         RentalStatus status,
         string dateFrom,
         string dateTo,
-        CarInfo car,
+        Car car,
         PaymentInfo payment)
     {
         RentalUid = rentalUid;

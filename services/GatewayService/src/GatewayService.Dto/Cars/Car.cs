@@ -1,18 +1,17 @@
 using System.Runtime.Serialization;
-using System.Text;
 using GatewayService.Dto.Cars.Enums;
 
 namespace GatewayService.Dto.Cars;
 
 [DataContract]
-public class CarResponse
+public class Car
 {
     /// <summary>
     /// UUID автомобиля
     /// </summary>
     /// <value>UUID автомобиля</value>
     [DataMember(Name="carUid", EmitDefaultValue=false)]
-    public Guid CarUid { get; set; }
+    public Guid Id { get; set; }
 
     /// <summary>
     /// Марка автомобиля
@@ -63,7 +62,7 @@ public class CarResponse
     [DataMember(Name="available", EmitDefaultValue=false)]
     public bool Available { get; set; }
 
-    public CarResponse(Guid carUid,
+    public Car(Guid id,
         string brand,
         string model,
         string registrationNumber,
@@ -72,7 +71,7 @@ public class CarResponse
         decimal price,
         bool available)
     {
-        CarUid = carUid;
+        Id = id;
         Brand = brand;
         Model = model;
         RegistrationNumber = registrationNumber;
