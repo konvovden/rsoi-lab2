@@ -23,5 +23,6 @@
     <ItemGroup>
       <ProjectReference Include="..\CarsService.Core\CarsService.Core.csproj" />
       <ProjectReference Include="..\Database\CarsService.Database.Context\CarsService.Database.Context.csproj" />
+      <ProjectReference Include="..\Database\CarsService.Database.Repositories\CarsService.Database.Repositories.csproj" />
     </ItemGroup>
 </Project>
