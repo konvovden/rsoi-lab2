@@ -1,4 +1,6 @@
+using CarsService.Database.Context;
 using CarsService.Server.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarsService.Server;
 
@@ -15,6 +17,9 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
+        
+        services.AddDbContext<CarsServiceContext>(opt => 
+            opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
