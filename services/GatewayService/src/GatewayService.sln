@@ -6,6 +6,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dto", "Dto", "{A386139F-75C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService.Dto", "GatewayService.Dto\GatewayService.Dto.csproj", "{5949E78E-10F9-4140-965C-097C612078E2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{2789D370-352B-4284-850A-CA5885AC3F07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService.Clients.CarsServiceApiClient", "Clients\GatewayService.Clients.CarsServiceApiClient\GatewayService.Clients.CarsServiceApiClient.csproj", "{7E492C41-EF08-46FF-A0E7-E835B7FFF80A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService.Converters", "GatewayService.Converters\GatewayService.Converters.csproj", "{B239BB10-B223-4B19-A82D-A80937DCDF70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +26,18 @@ Global
 		{5949E78E-10F9-4140-965C-097C612078E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5949E78E-10F9-4140-965C-097C612078E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5949E78E-10F9-4140-965C-097C612078E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E492C41-EF08-46FF-A0E7-E835B7FFF80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E492C41-EF08-46FF-A0E7-E835B7FFF80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E492C41-EF08-46FF-A0E7-E835B7FFF80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E492C41-EF08-46FF-A0E7-E835B7FFF80A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B239BB10-B223-4B19-A82D-A80937DCDF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B239BB10-B223-4B19-A82D-A80937DCDF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B239BB10-B223-4B19-A82D-A80937DCDF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B239BB10-B223-4B19-A82D-A80937DCDF70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5949E78E-10F9-4140-965C-097C612078E2} = {A386139F-75C8-4D62-A4C3-A2536AE7C658}
+		{7E492C41-EF08-46FF-A0E7-E835B7FFF80A} = {2789D370-352B-4284-850A-CA5885AC3F07}
+		{B239BB10-B223-4B19-A82D-A80937DCDF70} = {A386139F-75C8-4D62-A4C3-A2536AE7C658}
 	EndGlobalSection
 EndGlobal

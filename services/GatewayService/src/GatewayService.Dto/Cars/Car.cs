@@ -39,7 +39,7 @@ public class Car
     /// </summary>
     /// <value>Мощность автомобиля в лошадиных силах</value>
     [DataMember(Name="power", EmitDefaultValue=false)]
-    public decimal Power { get; set; }
+    public int Power { get; set; }
     
     /// <summary>
     /// Тип автомобиля
@@ -53,7 +53,7 @@ public class Car
     /// </summary>
     /// <value>Цена автомобиля за сутки</value>
     [DataMember(Name="price", EmitDefaultValue=false)]
-    public decimal Price { get; set; }
+    public int Price { get; set; }
 
     /// <summary>
     /// Флаг, указывающий что автомобиль доступен для бронирования
@@ -66,9 +66,9 @@ public class Car
         string brand,
         string model,
         string registrationNumber,
-        decimal power,
+        int power,
         CarType type,
-        decimal price,
+        int price,
         bool available)
     {
         Id = id;

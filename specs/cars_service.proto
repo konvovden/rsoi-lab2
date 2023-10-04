@@ -1,5 +1,9 @@
 syntax = "proto3";
 
+option csharp_namespace = "CarsService.Api";
+
+package cars;
+
 service CarsService {
     rpc GetCars(GetCarsRequest) returns (GetCarsResponse);
 }
@@ -23,12 +27,14 @@ message Car {
 }
 
 message GetCarsRequest {
-    int32 offset = 1;
-    int32 limit = 2;
+    int32 page = 1;
+    int32 size = 2;
     bool showAll = 3;
 }
 
 message GetCarsResponse {
     int32 total_amount = 1;
-    repeated Car cars = 2;
+    int32 page = 2;
+    int32 size = 3;
+    repeated Car cars = 4;
 }
