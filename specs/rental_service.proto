@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+option csharp_namespace = "RentalService.Api";
+
+import "google/protobuf/timestamp.proto";
+
+package rental;
+
+service RentalService {
+    rpc GetUserRentals(GetUserRentalRequest) returns (GetUserRentalsResponse);
+    rpc GetUserRental(GetUserRentalRequest) returns (GetUserRentalResponse);
+    rpc CreateRental(CreateRentalRequest) returns (CreateRentalResponse);
+    rpc CancelRental(CancelRentalRequest) returns (CancelRentalResponse);
+    rpc FinishRental(FinishRentalRequest) returns (FinishRentalResponse);
+}
+
+enum RentalStatus {
+    NEW = 1;
+    IN_PROGRESS = 2;
+    FINISHED = 3;
+    CANCELED = 4;
+}
+
+message Rental {
+    required string id = 1;
+    required string username = 2;
+    required string payment_id = 3;
+    required string car_id = 4;
+    required google.protobuf.Timestamp date_from = 5;
+    required google.protobuf.Timestamp date_to = 6;
+    required RentalStatus status = 7;
+}
+
+message GetUserRentalsRequest {
+    required string username = 1;
+}
+
+message GetUserRentalsResponse {
+    repeated Rental rentals = 1;
+}
+
+message GetUserRentalRequest {
+    required string username = 1;
+    required string rental_id = 2;
+}
+
+message GetUserRentalResponse {
+    required Rental rental = 1;
+}
+
+message CreateRentalRequest {
+    string id = 1;
+    required string username = 2;
+    required string car_id = 3;
+    required string payment_id = 4;
+    required google.protobuf.Timestamp date_from = 5;
+    required google.protobuf.Timestamp date_to = 6;
+}
+
+message CreateRentalResponse {
+    required Rental rental = 1;
+}
+
+message CancelRentalRequest {
+    required string username = 1;
+    required string rental_id = 2;
+}
+
+message CancelRentalResponse {
+    required Rental rental = 1;
+}
+
+message FinishRentalRequest {
+    required string username = 1;
+    required string rental_id = 2;
+}
+
+message FinishRentalResponse {
+    required Rental rental = 1;
+}

@@ -4,6 +4,11 @@ option csharp_namespace = "PaymentService.Api";
 
 package payment;
 
+service PaymentService {
+    rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse);
+    rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse);
+}
+
 enum PaymentStatus {
     PAID = 1;
     REVERSED = 2;
