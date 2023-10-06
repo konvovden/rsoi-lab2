@@ -4,14 +4,14 @@ using GatewayService.Dto.Payments.Enums;
 namespace GatewayService.Dto.Payments;
 
 [DataContract]
-public class PaymentInfo
+public class Payment
 {
     /// <summary>
     /// UUID платежа
     /// </summary>
     /// <value>UUID платежа</value>
     [DataMember(Name="paymentUid")]
-    public Guid PaymentUid { get; set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Статус платежа
@@ -25,13 +25,13 @@ public class PaymentInfo
     /// </summary>
     /// <value>Сумма платежа</value>
     [DataMember(Name="price")]
-    public decimal Price { get; set; }
+    public int Price { get; set; }
 
-    public PaymentInfo(Guid paymentUid, 
+    public Payment(string id, 
         PaymentStatus status,
-        decimal price)
+        int price)
     {
-        PaymentUid = paymentUid;
+        Id = id;
         Status = status;
         Price = price;
     }

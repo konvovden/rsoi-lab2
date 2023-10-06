@@ -6,14 +6,14 @@ using GatewayService.Dto.Rental.Enums;
 namespace GatewayService.Dto.Rental;
 
 [DataContract]
-public class RentalResponse
+public class Rental
 {
     /// <summary>
     /// UUID аренды
     /// </summary>
     /// <value>UUID аренды</value>
     [DataMember(Name="rentalUid")]
-    public Guid RentalUid { get; set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Статус аренды
@@ -27,14 +27,14 @@ public class RentalResponse
     /// </summary>
     /// <value>Дата начала аренды</value>
     [DataMember(Name="dateFrom")]
-    public string DateFrom { get; set; }
+    public DateOnly DateFrom { get; set; }
 
     /// <summary>
     /// Дата окончания аренды
     /// </summary>
     /// <value>Дата окончания аренды</value>
     [DataMember(Name="dateTo")]
-    public string DateTo { get; set; }
+    public DateOnly DateTo { get; set; }
 
     /// <summary>
     /// Gets or Sets Car
@@ -46,16 +46,16 @@ public class RentalResponse
     /// Gets or Sets Payment
     /// </summary>
     [DataMember(Name="payment")]
-    public PaymentInfo Payment { get; set; }
+    public Payment Payment { get; set; }
 
-    public RentalResponse(Guid rentalUid, 
+    public Rental(string id, 
         RentalStatus status,
-        string dateFrom,
-        string dateTo,
+        DateOnly dateFrom,
+        DateOnly dateTo,
         Car car,
-        PaymentInfo payment)
+        Payment payment)
     {
-        RentalUid = rentalUid;
+        Id = id;
         Status = status;
         DateFrom = dateFrom;
         DateTo = dateTo;
