@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "PaymentService.Api";
+
+package payment;
+
+enum PaymentStatus {
+    PAID = 1;
+    REVERSED = 2;
+}
+
+message Payment {
+    required string id = 1;
+    required PaymentStatus status = 2;
+    required int32 price = 3;
+}
+
+message GetPaymentRequest {
+    required string id = 1;
+}
+
+message GetPaymentResponse {
+    required Payment payment = 1;
+}
+
+message GetPaymentsRequest {
+    repeated string ids = 1;
+}
+
+message GetPaymentsResponse {
+    repeated Payment payments = 1;
+    repeated string not_found_ids = 2;
+}
