@@ -1,6 +1,6 @@
 # Лабораторная работа #2
 
-![GitHub Classroom Workflow](../../workflows/GitHub%20Classroom%20Workflow/badge.svg?branch=master)
+![Services Workflow](../../workflows/Services%20Workflow/badge.svg?branch=master)
 
 ## Microservices
 
