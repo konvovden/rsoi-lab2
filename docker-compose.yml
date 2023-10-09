@@ -1,20 +1,27 @@
 version: "3"
 services:
-  postgres:
-    image: library/postgres:13
+  database:
+    image: postgres:latest
     container_name: postgres
     restart: on-failure
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_PASSWORD: "PaSSw0rdAdmin"
       POSTGRES_DB: postgres
     volumes:
       - db-data:/var/lib/postgresql/data
-      - ./postgres/:/docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
 
-# TODO добавить сервисы
+  cars-service:
+    image: konvovden/rsoi:cars-service
+    container_name: cars-service
+    restart: on-failure
+    depends_on:
+      - database
+    ports:
+      - "8070:8070"
+      - "8071:8071"
 
 volumes:
   db-data:

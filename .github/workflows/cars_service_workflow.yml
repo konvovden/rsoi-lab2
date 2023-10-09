@@ -8,3 +8,4 @@ jobs:
     with:
       service-name: 'cars-service'
       project-name: 'CarsService'
+    secrets: inherit
