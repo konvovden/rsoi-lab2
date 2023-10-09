@@ -4,8 +4,7 @@ on: workflow_dispatch
 jobs:
   start-workflow:
     name: Call workflow
-    steps: 
-    - uses: ./.github/workflows/service_workflow_base.yml
-      with:
-        service-name: cars-service
-        project-name: CarsService
+    uses: ./.github/workflows/service_workflow_base.yml@master
+    with:
+      service-name: cars-service
+      project-name: CarsService
