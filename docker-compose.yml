@@ -48,7 +48,7 @@ services:
     container_name: api-gateway
     restart: on-failure
     ports:
-      - "8080:8080"
+      - "80:8080"
 
 volumes:
   db-data:

@@ -84,36 +84,3 @@ jobs:
           tags: konvovden/rsoi:${{ inputs.service-name }}
           context: .
           file: ${{ env.BASE_PATH }}/Dockerfile
-
-
-  deploy: 
-    name: Deploy
-    needs: publish
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Send docker-compose
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USERNAME }}
-          password: ${{ secrets.DEPLOY_PASSWORD }}
-          port: ${{ secrets.DEPLOY_PORT }}
-          source: docker-compose.yml
-          target: rsoi/
-
-      - name: Deploy
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USERNAME }}
-          password: ${{ secrets.DEPLOY_PASSWORD }}
-          port: ${{ secrets.DEPLOY_PORT }}
-          script: |
-            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-            docker-compose -f rsoi/docker-compose.yml pull ${{ inputs.service-name }}
-            docker-compose -f rsoi/docker-compose.yml restart ${{ inputs.service-name }}
