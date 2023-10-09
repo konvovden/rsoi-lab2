@@ -1,11 +1,9 @@
 name: GitHub Classroom Workflow
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  workflow_run: 
+    workflows: ["Services Workflow"]
+    types:
+      - completed
       
 jobs:
   build:
