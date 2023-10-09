@@ -1,0 +1,10 @@
+name: Services Workflow
+on: workflow_dispatch
+    
+jobs:
+  cars-service-workflow:
+    uses: ./.github/workflows/service_workflow_base.yml
+    with:
+      service-name: 'cars-service'
+      project-name: 'CarsService'
+    secrets: inherit
