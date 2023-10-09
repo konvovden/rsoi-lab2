@@ -2,12 +2,36 @@ name: Services Workflow
 on: workflow_dispatch
     
 jobs:
+  payment-service-workflow:
+    name: Payment Service Workflow
+    uses: ./.github/workflows/service_workflow_base.yml
+    with:
+      service-name: 'payment-service'
+      project-name: 'PaymentService'
+    secrets: inherit
+
+  rental-service-workflow:
+    name: Rental Service Workflow
+    uses: ./.github/workflows/service_workflow_base.yml
+    with:
+      service-name: 'rental-service'
+      project-name: 'RentalService'
+    secrets: inherit
+
   cars-service-workflow:
     name: Cars Service Workflow
     uses: ./.github/workflows/service_workflow_base.yml
     with:
       service-name: 'cars-service'
       project-name: 'CarsService'
+    secrets: inherit
+
+  api-gateway-workflow:
+    name: API Gateway Workflow
+    uses: ./.github/workflows/service_workflow_base.yml
+    with:
+      service-name: 'api-gateway'
+      project-name: 'GatewayService'
     secrets: inherit
 
   autograding-workflow:

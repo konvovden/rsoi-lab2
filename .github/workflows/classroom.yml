@@ -10,7 +10,25 @@ jobs:
         with:
           fetch-depth: 0
 
-      
+      - name: Wait Payment Service startup
+        uses: iFaxity/wait-on-action@v1.1.0
+        with:
+          resource: http-get://${{ secrets.DEPLOY_HOST }}:8050/manage/health
+
+      - name: Wait Rental Service startup
+        uses: iFaxity/wait-on-action@v1.1.0
+        with:
+          resource: http-get://${{ secrets.DEPLOY_HOST }}:8060/manage/health
+
+      - name: Wait Cars Service startup
+        uses: iFaxity/wait-on-action@v1.1.0
+        with:
+          resource: http-get://${{ secrets.DEPLOY_HOST }}:8070/manage/health
+
+      - name: Wait Gateway startup
+        uses: iFaxity/wait-on-action@v1.1.0
+        with:
+          resource: http-get://${{ secrets.DEPLOY_HOST }}:8080/manage/health
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
