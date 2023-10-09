@@ -33,7 +33,7 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ inputes.service-name }}-binaries
+          name: ${{ inputs.service-name }}-binaries
           path: ${{ inputs.project-name }}Build/
 
   unit-tests:
@@ -67,7 +67,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
-          name: ${{ inputes.service-name }}-binaries
+          name: ${{ inputs.service-name }}-binaries
           path: ${{ inputs.project-name }}Build/
 
 
