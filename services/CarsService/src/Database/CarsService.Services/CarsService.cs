@@ -72,7 +72,7 @@ public class CarsService : ICarsService
         if (car.Availability == false)
             throw new CarAlreadyReservedException(id);
         
-        car.Availability = true;
+        car.Availability = false;
 
         await _dbContext.SaveChangesAsync();
 
@@ -87,7 +87,7 @@ public class CarsService : ICarsService
         if (car is null)
             throw new CarNotFoundException(id);
 
-        car.Availability = false;
+        car.Availability = true;
 
         await _dbContext.SaveChangesAsync();
 
