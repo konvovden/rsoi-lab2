@@ -1,0 +1,8 @@
+on: workflow_dispatch
+    
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/service_workflow_base.yml
+    with:
+      project-name: CarsService
+      service-name: cars-service
