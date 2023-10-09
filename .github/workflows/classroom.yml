@@ -14,25 +14,25 @@ jobs:
         uses: iFaxity/wait-on-action@v1.1.0
         with:
           resource: http-get://${{ secrets.DEPLOY_HOST }}:8050/manage/health
-          timeout: 30s
+          timeout: 30000
 
       - name: Wait Rental Service startup
         uses: iFaxity/wait-on-action@v1.1.0
         with:
           resource: http-get://${{ secrets.DEPLOY_HOST }}:8060/manage/health
-          timeout: 30s
+          timeout: 30000
 
       - name: Wait Cars Service startup
         uses: iFaxity/wait-on-action@v1.1.0
         with:
           resource: http-get://${{ secrets.DEPLOY_HOST }}:8070/manage/health
-          timeout: 30s
+          timeout: 30000
 
       - name: Wait Gateway startup
         uses: iFaxity/wait-on-action@v1.1.0
         with:
           resource: http-get://${{ secrets.DEPLOY_HOST }}:8080/manage/health
-          timeout: 30s
+          timeout: 30000
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
