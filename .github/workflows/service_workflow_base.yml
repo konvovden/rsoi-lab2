@@ -10,7 +10,7 @@ on:
         type: string
 
 env:
-  BASE_PATH: ./services/${{ inputs.project-name }}/src
+  BASE_PATH: ./services/${{ inputs.project-name }}
 
 jobs:
   build: 
@@ -28,7 +28,7 @@ jobs:
           dotnet-version: '7.0.x'
 
       - name: Build app
-        run: dotnet publish ${{ env.BASE_PATH }}/${{ inputs.project-name }}.Server/${{ inputs.project-name }}.Server.csproj -c Release -o ${{ inputs.project-name }}Build/
+        run: dotnet publish ${{ env.BASE_PATH }}/src/${{ inputs.project-name }}.Server/${{ inputs.project-name }}.Server.csproj -c Release -o ${{ inputs.project-name }}Build/
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
@@ -52,7 +52,7 @@ jobs:
           dotnet-version: '7.0.x'
 
       - name: Run Unit Tests
-        run: dotnet test ${{ env.BASE_PATH }}/${{ inputs.project-name }}.sln
+        run: dotnet test ${{ env.BASE_PATH }}/src/${{ inputs.project-name }}.sln
 
   publish:
     name: Publish Docker image
