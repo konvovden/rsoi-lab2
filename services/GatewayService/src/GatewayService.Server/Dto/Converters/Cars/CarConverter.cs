@@ -1,5 +1,5 @@
 ﻿using GatewayService.Server.Dto.Converters.Cars.Enums;
-using DtoCar = GatewayService.Dto.Cars.Car;
+using DtoCar = GatewayService.Server.Dto.Models.Cars.Car;
 using ApiCar = CarsService.Api.Car;
 
 namespace GatewayService.Server.Dto.Converters.Cars;

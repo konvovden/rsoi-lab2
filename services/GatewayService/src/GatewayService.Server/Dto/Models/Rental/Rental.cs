@@ -1,9 +1,9 @@
 using System.Runtime.Serialization;
-using GatewayService.Dto.Cars;
 using GatewayService.Dto.Payments;
 using GatewayService.Dto.Rental.Enums;
+using GatewayService.Server.Dto.Models.Cars;
 
-namespace GatewayService.Dto.Rental;
+namespace GatewayService.Server.Dto.Models.Rental;
 
 [DataContract]
 public class Rental
@@ -37,6 +37,13 @@ public class Rental
     public DateOnly DateTo { get; set; }
 
     /// <summary>
+    /// UUID автомобиля
+    /// </summary>
+    /// <value>UUID автомобиля</value>
+    [DataMember(Name = "carUid")]
+    public string CarId { get; set; }
+
+    /// <summary>
     /// Gets or Sets Car
     /// </summary>
     [DataMember(Name="car")]
@@ -52,6 +59,7 @@ public class Rental
         RentalStatus status,
         DateOnly dateFrom,
         DateOnly dateTo,
+        string carId,
         Car car,
         Payment payment)
     {
@@ -59,6 +67,7 @@ public class Rental
         Status = status;
         DateFrom = dateFrom;
         DateTo = dateTo;
+        CarId = carId;
         Car = car;
         Payment = payment;
     }

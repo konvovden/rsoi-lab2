@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
 using GatewayService.Dto.Cars.Enums;
 
-namespace GatewayService.Dto.Cars;
+namespace GatewayService.Server.Dto.Models.Cars;
 
 [DataContract]
 public class Car

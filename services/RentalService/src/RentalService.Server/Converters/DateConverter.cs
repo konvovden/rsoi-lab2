@@ -1,6 +1,6 @@
 ﻿using RentalService.Api;
 
-namespace GatewayService.Server.Dto.Converters;
+namespace RentalService.Server.Converters;
 
 public static class DateConverter
 {

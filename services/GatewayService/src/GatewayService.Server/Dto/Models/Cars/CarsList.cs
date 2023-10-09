@@ -1,4 +1,5 @@
 using System.Runtime.Serialization;
+using GatewayService.Server.Dto.Models.Cars;
 
 namespace GatewayService.Dto.Cars;
 

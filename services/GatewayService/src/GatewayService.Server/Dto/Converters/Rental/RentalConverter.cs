@@ -1,9 +1,8 @@
-﻿using GatewayService.Converters;
-using GatewayService.Server.Dto.Converters.Cars;
+﻿using GatewayService.Server.Dto.Converters.Cars;
 using GatewayService.Server.Dto.Converters.Payment;
 using GatewayService.Server.Dto.Converters.Rental.Enums;
 using ApiRental = RentalService.Api.Rental;
-using DtoRental = GatewayService.Dto.Rental.Rental;
+using DtoRental = GatewayService.Server.Dto.Models.Rental.Rental;
 using ApiCar = CarsService.Api.Car;
 using ApiPayment = PaymentService.Api.Payment;
 
@@ -17,6 +16,7 @@ public static class RentalConverter
             RentalStatusConverter.Convert(apiRental.Status),
             DateConverter.Convert(apiRental.DateFrom),
             DateConverter.Convert(apiRental.DateTo),
+            apiCar.Id,
             CarConverter.Convert(apiCar),
             PaymentConverter.Convert(apiPayment));
     }

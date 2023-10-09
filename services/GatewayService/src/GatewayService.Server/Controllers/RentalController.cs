@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using CarsService.Api;
-using GatewayService.Converters;
+using GatewayService.Server.Dto.Converters;
 using GatewayService.Server.Dto.Converters.Rental;
 using Microsoft.AspNetCore.Mvc;
 using PaymentService.Api;
 using RentalService.Api;
 using Swashbuckle.AspNetCore.Annotations;
 using CreateRentalRequest = GatewayService.Server.Dto.Models.Rental.CreateRentalRequest;
-using Rental = GatewayService.Dto.Rental.Rental;
+using Rental = GatewayService.Server.Dto.Models.Rental.Rental;
 
 namespace GatewayService.Server.Controllers;
 

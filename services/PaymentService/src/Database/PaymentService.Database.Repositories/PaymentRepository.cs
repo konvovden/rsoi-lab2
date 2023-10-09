@@ -53,6 +53,7 @@ public class PaymentRepository : IPaymentRepository
             .FirstAsync(p => p.Id == id);
 
         payment.Status = PaymentStatusConverter.Convert(status);
+        await _dbContext.SaveChangesAsync();
 
         return PaymentConverter.Convert(payment);
     }
