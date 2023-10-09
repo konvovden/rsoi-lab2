@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace GatewayService.Dto.Rental;
+namespace GatewayService.Server.Dto.Models.Rental;
 
 [DataContract]
 public class CreateRentalRequest
@@ -10,27 +10,27 @@ public class CreateRentalRequest
     /// </summary>
     /// <value>UUID автомобиля</value>
     [DataMember(Name="carUid")]
-    public Guid CarUid { get; set; }
+    public string CarId { get; set; }
 
     /// <summary>
     /// Дата начала аренды
     /// </summary>
     /// <value>Дата начала аренды</value>
     [DataMember(Name="dateFrom")]
-    public string DateFrom { get; set; }
+    public DateOnly DateFrom { get; set; }
 
     /// <summary>
     /// Дата окончания аренды
     /// </summary>
     /// <value>Дата окончания аренды</value>
     [DataMember(Name="dateTo")]
-    public string DateTo { get; set; }
+    public DateOnly DateTo { get; set; }
 
-    public CreateRentalRequest(Guid carUid,
-        string dateFrom, 
-        string dateTo)
+    public CreateRentalRequest(string carId,
+        DateOnly dateFrom, 
+        DateOnly dateTo)
     {
-        CarUid = carUid;
+        CarId = carId;
         DateFrom = dateFrom;
         DateTo = dateTo;
     }

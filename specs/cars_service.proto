@@ -5,7 +5,11 @@ option csharp_namespace = "CarsService.Api";
 package cars;
 
 service CarsService {
+    rpc GetCarsList(GetCarsListRequest) returns (GetCarsListResponse);
     rpc GetCars(GetCarsRequest) returns (GetCarsResponse);
+    rpc GetCar(GetCarRequest) returns (GetCarResponse);
+    rpc ReserveCar(ReserveCarRequest) returns (ReserveCarResponse);
+    rpc RemoveReserveFromCar(RemoveReserveFromCarRequest) returns (RemoveReserveFromCarResponse);
 }
 
 enum CarType {
@@ -26,15 +30,48 @@ message Car {
     bool availability = 8;
 }
 
-message GetCarsRequest {
+message GetCarsListRequest {
     int32 page = 1;
     int32 size = 2;
     bool showAll = 3;
 }
 
-message GetCarsResponse {
+message GetCarsListResponse {
     int32 total_amount = 1;
     int32 page = 2;
     int32 size = 3;
     repeated Car cars = 4;
+}
+
+message GetCarsRequest {
+    repeated string ids = 1;
+}
+
+message GetCarsResponse {
+    repeated Car cars = 1;
+    repeated string not_found_ids = 2;
+}
+
+message GetCarRequest {
+    string id = 1;
+}
+
+message GetCarResponse {
+    Car car = 1;
+}
+
+message ReserveCarRequest {
+    string id = 1;
+}
+
+message ReserveCarResponse {
+    Car car = 1;
+}
+
+message RemoveReserveFromCarRequest {
+    string id = 1;
+}
+
+message RemoveReserveFromCarResponse {
+    Car car = 1;
 }

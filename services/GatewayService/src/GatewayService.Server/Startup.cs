@@ -1,4 +1,3 @@
-using GatewayService.Clients.CarsServiceApiClient.Extensions;
 using Microsoft.OpenApi.Models;
 
 namespace GatewayService.Server;
@@ -23,7 +22,20 @@ public class Startup
         });
         services.AddSwaggerGenNewtonsoftSupport();
 
-        services.AddCarsServiceApiClient(Configuration);
+        services.AddGrpcClient<CarsService.Api.CarsService.CarsServiceClient>(o =>
+        {
+            o.Address = new Uri("http://127.0.0.1:8071");
+        });
+
+        services.AddGrpcClient<PaymentService.Api.PaymentService.PaymentServiceClient>(o =>
+        {
+            o.Address = new Uri("http://127.0.0.1:8051");
+        });
+
+        services.AddGrpcClient<RentalService.Api.RentalService.RentalServiceClient>(o =>
+        {
+            o.Address = new Uri("http://127.0.0.1:8061");
+        });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

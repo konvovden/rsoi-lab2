@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using CarsService.Api;
-using GatewayService.Clients.CarsServiceApiClient;
-using GatewayService.Converters.Cars;
 using GatewayService.Dto.Cars;
+using GatewayService.Server.Dto.Converters.Cars;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -12,9 +11,9 @@ namespace GatewayService.Server.Controllers;
 [Route("/api/v1/cars")]
 public class CarsController : ControllerBase
 {
-    private readonly ICarsServiceApiClient _carsServiceClient;
-
-    public CarsController(ICarsServiceApiClient carsServiceClient)
+    private readonly CarsService.Api.CarsService.CarsServiceClient _carsServiceClient;
+    
+    public CarsController(CarsService.Api.CarsService.CarsServiceClient carsServiceClient)
     {
         _carsServiceClient = carsServiceClient;
     }
@@ -35,14 +34,12 @@ public class CarsController : ControllerBase
         size ??= 50;
         showAll ??= false;
 
-        var request = new GetCarsRequest()
+        var response = await _carsServiceClient.GetCarsListAsync(new GetCarsListRequest()
         {
             Page = page.Value,
             Size = size.Value,
             ShowAll = showAll.Value
-        };
-
-        var response = await _carsServiceClient.GetCarsAsync(request);
+        });
 
         return Ok(CarsListConverter.Convert(response));
     }

@@ -1,7 +1,7 @@
 ﻿using DtoCarType = GatewayService.Dto.Cars.Enums.CarType;
 using ApiCarType = CarsService.Api.CarType;
 
-namespace GatewayService.Converters.Cars.Enums;
+namespace GatewayService.Server.Dto.Converters.Cars.Enums;
 
 public static class CarTypeConverter
 {

@@ -7,25 +7,27 @@ package payment;
 service PaymentService {
     rpc GetPayment(GetPaymentRequest) returns (GetPaymentResponse);
     rpc GetPayments(GetPaymentsRequest) returns (GetPaymentsResponse);
+    rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse);
+    rpc CancelPayment(CancelPaymentRequest) returns (CancelPaymentResponse);
 }
 
 enum PaymentStatus {
-    PAID = 1;
-    REVERSED = 2;
+    PAID = 0;
+    CANCELED = 1;
 }
 
 message Payment {
-    required string id = 1;
-    required PaymentStatus status = 2;
-    required int32 price = 3;
+    string id = 1;
+    PaymentStatus status = 2;
+    int32 price = 3;
 }
 
 message GetPaymentRequest {
-    required string id = 1;
+    string id = 1;
 }
 
 message GetPaymentResponse {
-    required Payment payment = 1;
+    Payment payment = 1;
 }
 
 message GetPaymentsRequest {
@@ -35,4 +37,20 @@ message GetPaymentsRequest {
 message GetPaymentsResponse {
     repeated Payment payments = 1;
     repeated string not_found_ids = 2;
+}
+
+message CreatePaymentRequest {
+    int32 price = 1;   
+}
+
+message CreatePaymentResponse {
+    Payment payment = 1;
+}
+
+message CancelPaymentRequest {
+    string id = 1;
+}
+
+message CancelPaymentResponse {
+    Payment payment = 1;
 }

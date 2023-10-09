@@ -2,12 +2,10 @@ syntax = "proto3";
 
 option csharp_namespace = "RentalService.Api";
 
-import "google/protobuf/timestamp.proto";
-
 package rental;
 
 service RentalService {
-    rpc GetUserRentals(GetUserRentalRequest) returns (GetUserRentalsResponse);
+    rpc GetUserRentals(GetUserRentalsRequest) returns (GetUserRentalsResponse);
     rpc GetUserRental(GetUserRentalRequest) returns (GetUserRentalResponse);
     rpc CreateRental(CreateRentalRequest) returns (CreateRentalResponse);
     rpc CancelRental(CancelRentalRequest) returns (CancelRentalResponse);
@@ -15,24 +13,24 @@ service RentalService {
 }
 
 enum RentalStatus {
-    NEW = 1;
-    IN_PROGRESS = 2;
-    FINISHED = 3;
-    CANCELED = 4;
+    NEW = 0;
+    IN_PROGRESS = 1;
+    FINISHED = 2;
+    CANCELED = 3;
 }
 
 message Rental {
-    required string id = 1;
-    required string username = 2;
-    required string payment_id = 3;
-    required string car_id = 4;
-    required google.protobuf.Timestamp date_from = 5;
-    required google.protobuf.Timestamp date_to = 6;
-    required RentalStatus status = 7;
+    string id = 1;
+    string username = 2;
+    string payment_id = 3;
+    string car_id = 4;
+    Date date_from = 5;
+    Date date_to = 6;
+    RentalStatus status = 7;
 }
 
 message GetUserRentalsRequest {
-    required string username = 1;
+    string username = 1;
 }
 
 message GetUserRentalsResponse {
@@ -40,41 +38,46 @@ message GetUserRentalsResponse {
 }
 
 message GetUserRentalRequest {
-    required string username = 1;
-    required string rental_id = 2;
+    string username = 1;
+    string rental_id = 2;
 }
 
 message GetUserRentalResponse {
-    required Rental rental = 1;
+    Rental rental = 1;
 }
 
 message CreateRentalRequest {
-    string id = 1;
-    required string username = 2;
-    required string car_id = 3;
-    required string payment_id = 4;
-    required google.protobuf.Timestamp date_from = 5;
-    required google.protobuf.Timestamp date_to = 6;
+    string username = 1;
+    string car_id = 2;
+    string payment_id = 3;
+    Date date_from = 4;
+    Date date_to = 5;
 }
 
 message CreateRentalResponse {
-    required Rental rental = 1;
+    Rental rental = 1;
 }
 
 message CancelRentalRequest {
-    required string username = 1;
-    required string rental_id = 2;
+    string username = 1;
+    string rental_id = 2;
 }
 
 message CancelRentalResponse {
-    required Rental rental = 1;
+    Rental rental = 1;
 }
 
 message FinishRentalRequest {
-    required string username = 1;
-    required string rental_id = 2;
+    string username = 1;
+    string rental_id = 2;
 }
 
 message FinishRentalResponse {
-    required Rental rental = 1;
+    Rental rental = 1;
+}
+
+message Date {
+    int32 year = 1;  
+    int32 month = 2;
+    int32 day = 3;
 }

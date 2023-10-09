@@ -11,7 +11,7 @@ public class Car
     /// </summary>
     /// <value>UUID автомобиля</value>
     [DataMember(Name="carUid")]
-    public Guid Id { get; set; }
+    public string Id { get; set; }
 
     /// <summary>
     /// Марка автомобиля
@@ -62,7 +62,7 @@ public class Car
     [DataMember(Name="available")]
     public bool Available { get; set; }
 
-    public Car(Guid id,
+    public Car(string id,
         string brand,
         string model,
         string registrationNumber,

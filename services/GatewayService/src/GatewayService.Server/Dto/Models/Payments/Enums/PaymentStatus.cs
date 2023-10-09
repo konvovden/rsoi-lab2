@@ -10,7 +10,6 @@ namespace GatewayService.Dto.Payments.Enums;
 [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 public enum PaymentStatus
 {
-            
     /// <summary>
     /// Enum PAIDEnum for PAID
     /// </summary>
