@@ -25,7 +25,7 @@ jobs:
           dotnet-version: '7.0.x'
 
       - name: Build app
-        run: dotnet publish services/${{ service-name }}/src/${{ service-name }}.Server/${{ service-name }}.Server.csproj -c Release -o ${{ service-name }}Build/
+        run: dotnet publish services/${{ inputs.service-name }}/src/${{ inputs.service-name }}.Server/${{ inputs.service-name }}.Server.csproj -c Release -o ${{ inputs.service-name }}Build/
 
       - name: Run Unit Tests
-        run: dotnet test services/${{ service-name }}src/${{ service-name }}.sln
+        run: dotnet test services/${{ inputs.service-name }}src/${{ inputs.service-name }}.sln
