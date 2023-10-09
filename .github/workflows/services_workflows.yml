@@ -36,6 +36,6 @@ jobs:
 
   autograding-workflow:
     name: Autograding workflow
-    needs: cars-service-workflow
+    needs: [ payment-service-workflow, rental-service-workflow, cars-service-workflow, api-gateway-workflow ]
     uses: ./.github/workflows/classroom.yml
     secrets: inherit
