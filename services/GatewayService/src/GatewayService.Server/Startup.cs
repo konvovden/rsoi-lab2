@@ -1,3 +1,4 @@
+using GatewayService.Server.Middlewares;
 using Microsoft.OpenApi.Models;
 
 namespace GatewayService.Server;
@@ -50,11 +51,13 @@ public class Startup
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PersonService.Server v1"));
         
         app.UseHttpsRedirection();
-
+        
         app.UseRouting();
 
         app.UseAuthorization();
 
+        app.UseMiddleware<GrpcExceptionsHandleMiddleware>();
+        
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();

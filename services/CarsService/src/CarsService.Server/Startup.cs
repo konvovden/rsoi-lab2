@@ -1,7 +1,7 @@
-using CarsService.Core.Repositories;
+using CarsService.Core.Services;
 using CarsService.Database.Context;
-using CarsService.Database.Repositories;
-using CarsService.Server.Services;
+using CarsService.Server.GrpcServices;
+using CarsService.Server.Interceptors;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarsService.Server;
@@ -20,12 +20,12 @@ public class Startup
     {
         services.AddControllers();
 
-        services.AddGrpc();
+        services.AddGrpc(options => options.Interceptors.Add<ExceptionsHandlingInterceptor>());
         
         services.AddDbContext<CarsServiceContext>(opt => 
             opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
-        services.AddScoped<ICarsRepository, CarsRepository>();
+        services.AddScoped<ICarsService, CarsService.Services.CarsService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

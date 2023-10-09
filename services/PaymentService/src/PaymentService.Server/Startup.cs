@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using PaymentService.Core.Repositories;
+using PaymentService.Core.Services;
 using PaymentService.Database.Context;
-using PaymentService.Database.Repositories;
-using PaymentService.Server.Services;
+using PaymentService.Server.GrpcServices;
+using PaymentService.Server.Interceptors;
 
 namespace PaymentService.Server;
 
@@ -20,12 +20,12 @@ public class Startup
     {
         services.AddControllers();
         
-        services.AddGrpc();
+        services.AddGrpc(options => options.Interceptors.Add<ExceptionsHandlingInterceptor>());
         
         services.AddDbContext<PaymentServiceContext>(opt => 
             opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
-        services.AddScoped<IPaymentRepository, PaymentRepository>();
+        services.AddScoped<IPaymentService, Services.PaymentService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

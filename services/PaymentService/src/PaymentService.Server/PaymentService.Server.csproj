@@ -22,7 +22,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Database\PaymentService.Database.Context\PaymentService.Database.Context.csproj" />
-      <ProjectReference Include="..\Database\PaymentService.Database.Repositories\PaymentService.Database.Repositories.csproj" />
+      <ProjectReference Include="..\Database\PaymentService.Services\PaymentService.Services.csproj" />
       <ProjectReference Include="..\PaymentService.Core\PaymentService.Core.csproj" />
     </ItemGroup>
 </Project>

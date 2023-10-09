@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsService.Database.Models
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsService.Database.Context", "Database\CarsService.Database.Context\CarsService.Database.Context.csproj", "{9A412760-766B-4500-948F-AA697DBB99F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsService.Database.Repositories", "Database\CarsService.Database.Repositories\CarsService.Database.Repositories.csproj", "{EFD7E9D6-715F-401F-A59E-E0403D5C4249}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsService.Services", "Database\CarsService.Services\CarsService.Services.csproj", "{EFD7E9D6-715F-401F-A59E-E0403D5C4249}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsService.Core", "CarsService.Core\CarsService.Core.csproj", "{11B58F70-199F-429A-A512-B87C06AAF6AC}"
 EndProject
@@ -42,6 +42,5 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D66706F9-6718-4735-AA75-D72A92582394} = {2C1ACD48-19F4-42E4-A6EF-2ED82B2DE426}
 		{9A412760-766B-4500-948F-AA697DBB99F8} = {2C1ACD48-19F4-42E4-A6EF-2ED82B2DE426}
-		{EFD7E9D6-715F-401F-A59E-E0403D5C4249} = {2C1ACD48-19F4-42E4-A6EF-2ED82B2DE426}
 	EndGlobalSection
 EndGlobal

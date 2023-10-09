@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using RentalService.Core.Repositories;
+using RentalService.Core.Services;
 using RentalService.Database.Context;
-using RentalService.Database.Repositories;
-using RentalService.Server.Services;
+using RentalService.Server.GrpcServices;
+using RentalService.Server.Interceptors;
 
 namespace RentalService.Server;
 
@@ -20,12 +20,12 @@ public class Startup
     {
         services.AddControllers();
         
-        services.AddGrpc();
+        services.AddGrpc(options => options.Interceptors.Add<ExceptionsHandlingInterceptor>());
         
         services.AddDbContext<RentalServiceContext>(opt => 
                     opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
         
-        services.AddScoped<IRentalRepository, RentalRepository>();
+        services.AddScoped<IRentalService, RentalService.Services.RentalService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

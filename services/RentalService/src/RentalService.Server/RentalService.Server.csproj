@@ -22,7 +22,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Database\RentalService.Database.Context\RentalService.Database.Context.csproj" />
-      <ProjectReference Include="..\Database\RentalService.Database.Repositories\RentalService.Database.Repositories.csproj" />
       <ProjectReference Include="..\RentalService.Core\RentalService.Core.csproj" />
+      <ProjectReference Include="..\RentalService.Services\RentalService.Services.csproj" />
     </ItemGroup>
 </Project>

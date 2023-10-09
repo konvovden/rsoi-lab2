@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService.Database.Mod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService.Database.Context", "Database\PaymentService.Database.Context\PaymentService.Database.Context.csproj", "{45BD252C-47D9-4452-9CB6-C5C18DC4899E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService.Database.Repositories", "Database\PaymentService.Database.Repositories\PaymentService.Database.Repositories.csproj", "{EAAE2CE7-794A-4C79-BF9B-10D8E5ABEB83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService.Services", "Database\PaymentService.Services\PaymentService.Services.csproj", "{EAAE2CE7-794A-4C79-BF9B-10D8E5ABEB83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +42,5 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C63CABA9-E820-4443-9618-B0C75A5EDFE9} = {4C53B0F7-4306-4DE9-9B8A-23725BD97A9C}
 		{45BD252C-47D9-4452-9CB6-C5C18DC4899E} = {4C53B0F7-4306-4DE9-9B8A-23725BD97A9C}
-		{EAAE2CE7-794A-4C79-BF9B-10D8E5ABEB83} = {4C53B0F7-4306-4DE9-9B8A-23725BD97A9C}
 	EndGlobalSection
 EndGlobal
