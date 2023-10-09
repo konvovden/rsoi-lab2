@@ -3,6 +3,7 @@ on: workflow_dispatch
     
 jobs:
   cars-service-workflow:
+    name: Cars Service Workflow
     uses: ./.github/workflows/service_workflow_base.yml
     with:
       service-name: 'cars-service'

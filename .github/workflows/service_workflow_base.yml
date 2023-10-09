@@ -82,7 +82,9 @@ jobs:
         with:
           push: true
           tags: konvovden/rsoi:${{ inputs.service-name }}
-          context: ${{ env.BASE_PATH }}
+          context: .
+          file: ${{ env.BASE_PATH }}/Dockerfile
+
 
   deploy: 
     name: Deploy
