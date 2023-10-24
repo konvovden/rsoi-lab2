@@ -1,5 +1,8 @@
 name: Services Workflow
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - master
     
 jobs:
   payment-service-workflow:
